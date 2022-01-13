@@ -1,0 +1,24 @@
+postgres=# \c
+You are now connected to database "postgres" as user "postgres".
+postgres=# \c shop
+You are now connected to database "shop" as user "postgres".
+shop=# \dt
+         List of relations
+ Schema | Name  | Type  |  Owner
+--------+-------+-------+----------
+ public | users | table | postgres
+(1 row)
+
+
+shop=# INSERT INTO users (firstName, lastName, email)
+shop-# VALUES ('tom', 'jones', 'tom@tom.com');
+INSERT 0 1
+shop=# INSERT INTO users (firstName, lastName, email)
+shop-# VALUES ('dick', 'tracy', 'dick@dick.com');
+INSERT 0 1
+shop=# SELECT * FROM users;
+ id | firstname | lastname |     email
+----+-----------+----------+---------------
+  1 | tom       | jones    | tom@tom.com
+  2 | dick      | tracy    | dick@dick.com
+(2 rows)
